@@ -1,13 +1,9 @@
 import Phaser from 'phaser';
 
-const domContainer = document && document.getElementById('game-div');
-console.log(domContainer)
-console.log('=====  ')
 var config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
-  //domContainer,
   parent: 'game-div',
   createDOMContainer: true,
   physics: {
@@ -43,7 +39,7 @@ function preload ()
   this.load.image('ground', 'assets/platform.png');
   this.load.image('star', 'assets/star.png');
   this.load.image('bomb', 'assets/bomb.png');
-  this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+  this.load.spritesheet('dude', 'assets/stipan_01@0,5x.png', { frameWidth: 50, frameHeight: 104 });
 }
 
 function create ()
@@ -80,13 +76,13 @@ function create ()
 
   this.anims.create({
       key: 'turn',
-      frames: [ { key: 'dude', frame: 4 } ],
+      frames: [ { key: 'dude', frame: 11 } ],
       frameRate: 20
   });
 
   this.anims.create({
       key: 'right',
-      frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
+      frames: this.anims.generateFrameNumbers('dude', { start: 12, end: 15 }),
       frameRate: 10,
       repeat: -1
   });
